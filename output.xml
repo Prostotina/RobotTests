@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.13 on win32)" generated="20231205 21:27:35.406" rpa="false" schemaversion="4">
+<suite id="s1" name="RoborTests" source="C:\Users\shell\PycharmProjects\RoborTests">
+<suite id="s1-s1" name="Its" source="C:\Users\shell\PycharmProjects\RoborTests\its.robot">
+<test id="s1-s1-t1" name="Count character" line="11">
+<kw name="Get Character Count" library="RickAndMorty">
+<var>${count}</var>
+<msg timestamp="20231205 21:27:38.541" level="INFO">${count} = 826</msg>
+<status status="PASS" starttime="20231205 21:27:38.331" endtime="20231205 21:27:38.541"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${count}</arg>
+<arg>${826}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231205 21:27:38.542" endtime="20231205 21:27:38.542"/>
+</kw>
+<doc>Сравнение ожидаемого и текущего кол-ва персонажей</doc>
+<status status="PASS" starttime="20231205 21:27:38.330" endtime="20231205 21:27:38.543"/>
+</test>
+<test id="s1-s1-t2" name="Coordinates to Addresses" line="16">
+<kw name="Get Addresses From Coodrinates" library="OpenStreetMap">
+<var>${addresses_list_from_coordinates}</var>
+<msg timestamp="20231205 21:27:39.773" level="INFO">Исаакиевский собор, 4, Исаакиевская площадь, Адмиралтейский округ, Санкт-Петербург, Северо-Западный федеральный округ, 190107, Россия
+Казанский собор, 2, Казанская улица, Апраксин двор, округ № 78, Санкт-Петербург, Северо-Западный федеральный округ, 191186, Россия
+Никольский собор, 1, Никольская площадь, Адмиралтейский округ, Санкт-Петербург, Северо-Западный федеральный округ, 190068, Россия</msg>
+<msg timestamp="20231205 21:27:39.773" level="INFO">${addresses_list_from_coordinates} = Исаакиевский собор, 4, Исаакиевская площадь, Адмиралтейский округ, Санкт-Петербург, Северо-Западный федеральный округ, 190107, Россия
+Казанский собор, 2, Казанская улица, Апраксин двор, округ № 78, Са...</msg>
+<status status="PASS" starttime="20231205 21:27:38.544" endtime="20231205 21:27:39.773"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${addresses_list}</var>
+<arg>addresses.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231205 21:27:39.773" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\shell\PycharmProjects\RoborTests\addresses.txt"&gt;C:\Users\shell\PycharmProjects\RoborTests\addresses.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20231205 21:27:39.773" level="INFO">${addresses_list} = Исаакиевский собор, 4, Исаакиевская площадь, Адмиралтейский округ, Санкт-Петербург, Северо-Западный федеральный округ, 190107, Россия
+Казанский собор, 2, Казанская улица, Апраксин двор, округ № 78, Са...</msg>
+<status status="PASS" starttime="20231205 21:27:39.773" endtime="20231205 21:27:39.773"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${addresses_list_from_coordinates}</arg>
+<arg>${addresses_list}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231205 21:27:39.775" endtime="20231205 21:27:39.775"/>
+</kw>
+<doc>Обратное геокодирование</doc>
+<status status="PASS" starttime="20231205 21:27:38.544" endtime="20231205 21:27:39.775"/>
+</test>
+<test id="s1-s1-t3" name="Addresses to coordinates" line="22">
+<kw name="Get Coordinates From Adddreses" library="OpenStreetMap">
+<var>${coordinates_list_from_addresses}</var>
+<msg timestamp="20231205 21:27:41.349" level="INFO">59.93407845,30.3061419662862
+59.93446385,30.324639475
+59.9225072,30.300099303004338</msg>
+<msg timestamp="20231205 21:27:41.350" level="INFO">${coordinates_list_from_addresses} = 59.93407845,30.3061419662862
+59.93446385,30.324639475
+59.9225072,30.300099303004338</msg>
+<status status="PASS" starttime="20231205 21:27:39.776" endtime="20231205 21:27:41.350"/>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<var>${coordinates_list}</var>
+<arg>coordinates.txt</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20231205 21:27:41.350" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\shell\PycharmProjects\RoborTests\coordinates.txt"&gt;C:\Users\shell\PycharmProjects\RoborTests\coordinates.txt&lt;/a&gt;'.</msg>
+<msg timestamp="20231205 21:27:41.351" level="INFO">${coordinates_list} = 59.93407845,30.3061419662862
+59.93446385,30.324639475
+59.9225072,30.300099303004338</msg>
+<status status="PASS" starttime="20231205 21:27:41.350" endtime="20231205 21:27:41.351"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${coordinates_list_from_addresses}</arg>
+<arg>${coordinates_list}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231205 21:27:41.351" endtime="20231205 21:27:41.351"/>
+</kw>
+<doc>Геокодирование</doc>
+<status status="PASS" starttime="20231205 21:27:39.776" endtime="20231205 21:27:41.352"/>
+</test>
+<test id="s1-s1-t4" name="Test HTTP Request with Mock" line="28">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>rickandmortyapi</arg>
+<arg>https://rickandmortyapi.com/api</arg>
+<arg>verify=${true}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20231205 21:27:41.353" level="INFO">Creating Session using : alias=rickandmortyapi, url=https://rickandmortyapi.com/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20231205 21:27:41.352" endtime="20231205 21:27:41.353"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>rickandmortyapi</arg>
+<arg>/character/123</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20231205 21:27:41.507" level="INFO">GET Request : url=https://rickandmortyapi.com/api/character/123 
+ path_url=/api/character/123 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20231205 21:27:41.508" level="INFO">GET Response : url=https://rickandmortyapi.com/api/character/123 
+ status=200, reason=OK 
+ headers={'Access-Control-Allow-Origin': '*', 'Age': '2725', 'Cache-Control': 'max-age=259200', 'Cache-Status': '"Netlify Edge"; hit', 'Content-Length': '433', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Tue, 05 Dec 2023 18:27:41 GMT', 'Etag': 'W/"1b1-KVXJgjJXMC8Rwg2TwaOZWdqcmuM"', 'Expires': 'Fri, 08 Dec 2023 17:42:16 GMT', 'Server': 'Netlify', 'Strict-Transport-Security': 'max-age=31536000', 'X-Nf-Request-Id': '01HGXKRR83KDY2Y96PCVB7E5P4', 'X-Powered-By': 'Express'} 
+ body={"id":123,"name":"Fat Morty","status":"Alive","species":"Human","type":"","gender":"Male","origin":{"name":"unknown","url":""},"location":{"name":"Citadel of Ricks","url":"https://rickandmortyapi.com/api/location/3"},"image":"https://rickandmortyapi.com/api/character/avatar/123.jpeg","episode":["https://rickandmortyapi.com/api/episode/28"],"url":"https://rickandmortyapi.com/api/character/123","created":"2017-12-26T17:22:40.315Z"} 
+ </msg>
+<msg timestamp="20231205 21:27:41.508" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20231205 21:27:41.353" endtime="20231205 21:27:41.508"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20231205 21:27:41.509" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20231205 21:27:41.508" endtime="20231205 21:27:41.509"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.json()}</arg>
+<arg>${mock_response}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231205 21:27:41.509" endtime="20231205 21:27:41.510"/>
+</kw>
+<doc>HTTP запрос с помощью MOCK</doc>
+<status status="PASS" starttime="20231205 21:27:41.352" endtime="20231205 21:27:41.510"/>
+</test>
+<status status="PASS" starttime="20231205 21:27:35.424" endtime="20231205 21:27:41.510"/>
+</suite>
+<status status="PASS" starttime="20231205 21:27:35.407" endtime="20231205 21:27:41.511"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="RoborTests">RoborTests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Its">RoborTests.Its</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
